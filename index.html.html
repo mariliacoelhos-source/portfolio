@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marília Coelho · Portfólio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-dark: #2d5016;
+    --green-mid: #3d6b20;
+    --green-main: #4a7c2f;
+    --green-soft: #5a8f3a;
+    --green-light: #e8f0e0;
+    --green-xlight: #f2f7ed;
+    --off-white: #fafaf8;
+    --text-dark: #1c2414;
+    --text-mid: #3d4a32;
+    --text-muted: #6b7a5e;
+    --border: #d4e0c8;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--text-dark);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--green-dark);
+    padding: 0;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 420px;
+  }
+
+  .hero-sidebar {
+    background: var(--green-mid);
+    padding: 52px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .hero-initials {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: var(--green-soft);
+    border: 2px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--white);
+  }
+
+  .hero-contact-block { display: flex; flex-direction: column; gap: 12px; }
+
+  .hero-contact-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .hero-contact-item:hover { color: var(--white); }
+
+  .hero-contact-icon {
+    width: 28px; height: 28px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .hero-section-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 10px;
+  }
+
+  .hero-chips { display: flex; flex-direction: column; gap: 7px; }
+
+  .hero-chip {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    padding: 6px 12px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+  }
+
+  .hero-main {
+    padding: 52px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-role {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 14px;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 64px);
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+
+  .hero-objective {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.75;
+    max-width: 540px;
+    font-weight: 300;
+    border-left: 2px solid rgba(255,255,255,0.15);
+    padding-left: 20px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 60px;
+    display: flex;
+    gap: 36px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  nav a {
+    display: block;
+    padding: 16px 0;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+  nav a:hover { color: var(--green-main); border-bottom-color: var(--green-main); }
+
+  /* ── SECTIONS ── */
+  section { padding: 80px 60px; }
+
+  .section-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green-main);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    color: var(--text-dark);
+    margin-bottom: 48px;
+    line-height: 1.2;
+  }
+
+  /* ── EXPERIENCE ── */
+  #experiencia { background: var(--white); }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 0 48px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-item:last-child { border-bottom: none; }
+
+  .exp-meta { padding-top: 4px; }
+
+  .exp-period {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green-soft);
+    margin-bottom: 8px;
+  }
+
+  .exp-company {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .exp-tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--green-main);
+    background: var(--green-xlight);
+    border: 1px solid var(--green-light);
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+
+  .exp-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--text-dark);
+    margin-bottom: 18px;
+  }
+
+  .exp-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .exp-list li {
+    font-size: 13.5px;
+    color: var(--text-mid);
+    line-height: 1.65;
+    padding-left: 14px;
+    position: relative;
+  }
+  .exp-list li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--green-soft);
+  }
+
+  /* ── COMPETÊNCIAS ── */
+  #competencias { background: var(--green-xlight); }
+
+  .comp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .comp-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .comp-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(45,80,22,0.08);
+  }
+
+  .comp-bar {
+    width: 36px; height: 3px;
+    background: var(--green-main);
+    border-radius: 2px;
+    margin-bottom: 18px;
+  }
+
+  .comp-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .comp-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* ── FERRAMENTAS ── */
+  #ferramentas { background: var(--white); }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .tool-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 20px;
+    text-align: center;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .tool-card:hover {
+    border-color: var(--green-soft);
+    background: var(--green-xlight);
+  }
+
+  .tool-name {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  .tool-label {
+    font-size: 11.5px;
+    color: var(--text-muted);
+  }
+
+  /* ── FORMAÇÃO ── */
+  #formacao { background: var(--green-dark); }
+  #formacao .section-eyebrow { color: rgba(255,255,255,0.45); }
+  #formacao .section-title { color: var(--white); }
+
+  .formacao-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .form-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 32px;
+  }
+
+  .form-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 14px;
+  }
+
+  .form-degree {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .form-inst {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 18px;
+  }
+
+  .form-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+
+  .courses-list { display: flex; flex-direction: column; gap: 11px; }
+
+  .course-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    transition: background 0.2s;
+  }
+  .course-item:hover { background: rgba(255,255,255,0.08); }
+
+  .course-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green-soft);
+    flex-shrink: 0;
+  }
+
+  /* ── PERFIL ── */
+  #perfil { background: var(--green-xlight); }
+
+  .perfil-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .perfil-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .perfil-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--green-light);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .perfil-text {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.5;
+    padding-top: 4px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--green-dark);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+    padding: 36px;
+    color: rgba(255,255,255,0.35);
+    font-size: 12.5px;
+  }
+  footer a { color: rgba(255,255,255,0.55); text-decoration: none; }
+  footer a:hover { color: var(--white); }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-sidebar { padding: 40px 32px; }
+    .hero-main { padding: 40px 32px; }
+    section { padding: 56px 32px; }
+    nav { padding: 0 32px; gap: 20px; }
+    .exp-item { grid-template-columns: 1fr; gap: 16px; }
+    .comp-grid, .tools-grid, .formacao-grid, .perfil-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-sidebar">
+    <div class="hero-initials">MC</div>
+
+    <div class="hero-contact-block">
+      <div class="hero-section-label">Contato</div>
+      <a href="tel:+5516993081558" class="hero-contact-item">
+        <div class="hero-contact-icon">📞</div>
+        (16) 99308-1558
+      </a>
+      <a href="mailto:marilia.coelhos@outlook.com" class="hero-contact-item">
+        <div class="hero-contact-icon">✉</div>
+        marilia.coelhos@outlook.com
+      </a>
+      <span class="hero-contact-item">
+        <div class="hero-contact-icon">📍</div>
+        Ribeirão Preto – SP
+      </span>
+      <span class="hero-contact-item">
+        <div class="hero-contact-icon">in</div>
+        Marília Coelho
+      </span>
+    </div>
+
+    <div>
+      <div class="hero-section-label">Habilidades</div>
+      <div class="hero-chips">
+        <div class="hero-chip">Customer Success</div>
+        <div class="hero-chip">CRM · RD Station</div>
+        <div class="hero-chip">Gestão Administrativa</div>
+        <div class="hero-chip">Pacote Office</div>
+        <div class="hero-chip">SAP</div>
+        <div class="hero-chip">Monday.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-main">
+    <div class="hero-role">Analista Administrativo · CS</div>
+    <h1 class="hero-name">Marília<br>Coelho</h1>
+    <p class="hero-objective">Gerontóloga com experiência em relacionamento com clientes e sólida vivência na área administrativa. Busco oportunidades nas áreas de Sucesso do Cliente ou Administrativa, contribuindo para a eficiência dos processos e a experiência do cliente.</p>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#experiencia">Experiência</a>
+  <a href="#competencias">Competências</a>
+  <a href="#ferramentas">Ferramentas</a>
+  <a href="#formacao">Formação</a>
+  <a href="#perfil">Perfil</a>
+</nav>
+
+<!-- EXPERIÊNCIA -->
+<section id="experiencia">
+  <div class="section-eyebrow">Trajetória</div>
+  <h2 class="section-title">Experiência Profissional</h2>
+
+  <div class="exp-item">
+    <div class="exp-meta">
+      <div class="exp-period">2025 – presente</div>
+      <div class="exp-company">Bem te Quero+<br>Startup de Longevidade</div>
+      <div class="exp-tag">Customer Success</div>
+    </div>
+    <div>
+      <div class="exp-role">Analista de Customer Success</div>
+      <ul class="exp-list">
+        <li>Acompanhamento estratégico com clientes, com foco em engajamento, satisfação e retenção</li>
+        <li>Uso de CRM para automação, nutrição e qualificação de leads</li>
+        <li>Registro e acompanhamento de atividades no Monday, garantindo alinhamento entre equipes</li>
+        <li>Condução de atendimentos consultivos com foco em retenção e conversão</li>
+        <li>Apoio em onboarding de clientes, eventos corporativos e gestão do funil de vendas</li>
+        <li>Teste de produtos e análise de feedbacks para melhoria contínua da experiência do cliente</li>
+        <li>Análise de indicadores por meio de dashboards</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-meta">
+      <div class="exp-period">2021 – 2025</div>
+      <div class="exp-company">Hapvida<br>Assistência Médica LTDA</div>
+      <div class="exp-tag">Administrativo</div>
+    </div>
+    <div>
+      <div class="exp-role">Analista Administrativa</div>
+      <ul class="exp-list">
+        <li>Controle e ajuste de folha de ponto, incluindo tratativas de pendências com RH</li>
+        <li>Apoio às rotinas de departamento pessoal — admissões, férias e controles internos</li>
+        <li>Emissão e organização de notas fiscais</li>
+        <li>Gestão de processos administrativos, com foco em otimização e cumprimento de prazos</li>
+        <li>Controle de orçamento e almoxarifado</li>
+        <li>Apoio na organização de treinamentos institucionais</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETÊNCIAS -->
+<section id="competencias">
+  <div class="section-eyebrow">O que faço bem</div>
+  <h2 class="section-title">Competências</h2>
+  <div class="comp-grid">
+    <div class="comp-card">
+      <div class="comp-bar"></div>
+      <div class="comp-title">Gestão Administrativa</div>
+      <p class="comp-desc">Experiência prática em controle de documentos, fluxo financeiro, emissão de notas fiscais e rotinas de departamento pessoal.</p>
+    </div>
+    <div class="comp-card">
+      <div class="comp-bar"></div>
+      <div class="comp-title">Customer Success</div>
+      <p class="comp-desc">Foco em engajamento, satisfação e retenção de clientes. Atendimento consultivo com escuta ativa e identificação de oportunidades.</p>
+    </div>
+    <div class="comp-card">
+      <div class="comp-bar"></div>
+      <div class="comp-title">CRM & Automação</div>
+      <p class="comp-desc">Operação do RD Station para nutrição de leads, automação de fluxos e acompanhamento do funil de vendas.</p>
+    </div>
+    <div class="comp-card">
+      <div class="comp-bar"></div>
+      <div class="comp-title">Organização de Processos</div>
+      <p class="comp-desc">Estruturação de rotinas, acompanhamento de tarefas via Monday e garantia de prazos com qualidade.</p>
+    </div>
+    <div class="comp-card">
+      <div class="comp-bar"></div>
+      <div class="comp-title">Comunicação</div>
+      <p class="comp-desc">Facilidade em se comunicar com diferentes perfis — clientes, equipes e lideranças — com clareza e empatia.</p>
+    </div>
+    <div class="comp-card">
+      <div class="comp-bar"></div>
+      <div class="comp-title">Análise de Dados</div>
+      <p class="comp-desc">Leitura e interpretação de indicadores via dashboards para embasar decisões e melhorias na experiência do cliente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FERRAMENTAS -->
+<section id="ferramentas">
+  <div class="section-eyebrow">Tecnologia</div>
+  <h2 class="section-title">Ferramentas</h2>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <div class="tool-name">Excel</div>
+      <div class="tool-label">Pacote Office</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">PowerPoint</div>
+      <div class="tool-label">Pacote Office</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">RD Station</div>
+      <div class="tool-label">CRM & Automação</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">SAP</div>
+      <div class="tool-label">ERP Administrativo</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">Monday.com</div>
+      <div class="tool-label">Gestão de Projetos</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">Dashboards</div>
+      <div class="tool-label">Análise de Indicadores</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">Inteligência Artificial</div>
+      <div class="tool-label">Ferramentas de IA</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">Marketing Digital</div>
+      <div class="tool-label">Inbound · Conteúdo</div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMAÇÃO -->
+<section id="formacao">
+  <div class="section-eyebrow">Educação</div>
+  <h2 class="section-title">Formação & Cursos</h2>
+  <div class="formacao-grid">
+    <div class="form-card">
+      <div class="form-eyebrow">Graduação</div>
+      <div class="form-degree">Bacharelado em Gerontologia</div>
+      <div class="form-inst">UFSCar · Universidade Federal de São Carlos · 2021</div>
+      <p class="form-desc">Formação com foco em saúde, qualidade de vida e cuidado da pessoa idosa. Desenvolveu competências em comunicação empática, avaliação multidimensional e trabalho interdisciplinar.</p>
+    </div>
+    <div>
+      <div class="form-eyebrow" style="color:rgba(255,255,255,0.35); font-size:10px; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;">Cursos complementares</div>
+      <div class="courses-list">
+        <div class="course-item"><div class="course-dot"></div>Fundamentos em Experiência do Cliente</div>
+        <div class="course-item"><div class="course-dot"></div>Marketing de Conteúdo</div>
+        <div class="course-item"><div class="course-dot"></div>Escrita Criativa</div>
+        <div class="course-item"><div class="course-dot"></div>Inteligência Artificial</div>
+        <div class="course-item"><div class="course-dot"></div>Empreendedorismo e Inovação</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERFIL -->
+<section id="perfil">
+  <div class="section-eyebrow">Sobre mim</div>
+  <h2 class="section-title">Perfil Profissional</h2>
+  <div class="perfil-grid">
+    <div class="perfil-item">
+      <div class="perfil-num">01</div>
+      <div class="perfil-text">Organização e atenção a detalhes</div>
+    </div>
+    <div class="perfil-item">
+      <div class="perfil-num">02</div>
+      <div class="perfil-text">Comunicação clara e escuta ativa</div>
+    </div>
+    <div class="perfil-item">
+      <div class="perfil-num">03</div>
+      <div class="perfil-text">Proatividade na resolução de demandas</div>
+    </div>
+    <div class="perfil-item">
+      <div class="perfil-num">04</div>
+      <div class="perfil-text">Trabalho em equipe e adaptabilidade</div>
+    </div>
+    <div class="perfil-item">
+      <div class="perfil-num">05</div>
+      <div class="perfil-text">Facilidade com rotinas administrativas</div>
+    </div>
+    <div class="perfil-item">
+      <div class="perfil-num">06</div>
+      <div class="perfil-text">Aprendizado contínuo e abertura à inovação</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Marília Coelho &nbsp;·&nbsp; <a href="mailto:marilia.coelhos@outlook.com">marilia.coelhos@outlook.com</a> &nbsp;·&nbsp; (16) 99308-1558 &nbsp;·&nbsp; Ribeirão Preto – SP</p>
+</footer>
+
+</body>
+</html>
